@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image to Base64 Data URI Converter</title>
+    <meta name="description" content="Convert PNG, JPG, WebP, SVG, or GIF images into inline Base64 Data URIs for CSS and HTML embedding." />
+    <meta name="keywords" content="image to base64, data uri converter, embed image css, base64 image encoder" />
+    <meta name="author" content="Toolzaro" />
+    <meta name="theme-color" content="#4f46e5" />
+    <meta name="msapplication-TileColor" content="#4f46e5" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="application-name" content="Toolzaro" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Toolzaro" />
+
+    <!-- Canonical & Indexing -->
+    <link rel="canonical" href="https://toolzaro.cyou/image-to-base64-converter" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <!-- Complete Ultra-HD 3D Domain Favicon & App Icon Suite (Google Search, Modern & Legacy Browsers, iOS, Android, PWA) -->
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Static Schema.org Organization & WebSite Logo Markup for Google Search Favicon & Brand Knowledge Panel -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://toolzaro.cyou/#organization",
+            "name": "Toolzaro",
+            "url": "https://toolzaro.cyou/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://toolzaro.cyou/android-chrome-512x512.png",
+              "contentUrl": "https://toolzaro.cyou/android-chrome-512x512.png",
+              "width": 512,
+              "height": 512
+            },
+            "image": "https://toolzaro.cyou/android-chrome-512x512.png"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://toolzaro.cyou/#website",
+            "name": "Toolzaro",
+            "alternateName": "Toolzaro Online Utility Suite",
+            "url": "https://toolzaro.cyou/",
+            "publisher": {
+              "@id": "https://toolzaro.cyou/#organization"
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- RSS, Sitemap & Agentic Resource Discovery (ARD) Links for Search Engines & AI Agents -->
+    <link rel="alternate" type="application/rss+xml" title="Toolzaro Official RSS Feed" href="https://toolzaro.cyou/rss.xml" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://toolzaro.cyou/sitemap-index.xml" />
+    <link rel="ai-catalog" type="application/ai-catalog+json" title="Toolzaro AI Resource Catalog" href="https://toolzaro.cyou/.well-known/ai-catalog.json" />
+    <link rel="agent-card" type="application/agent-card+json" title="Toolzaro Agent Card" href="https://toolzaro.cyou/.well-known/agent-card.json" />
+    <link rel="alternate" type="text/markdown" title="Toolzaro AI &amp; LLM Documentation Index" href="https://toolzaro.cyou/llms.txt" />
+
+    <!-- OpenGraph / Facebook / LinkedIn / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Toolzaro" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://toolzaro.cyou/image-to-base64-converter" />
+    <meta property="og:title" content="Image to Base64 Data URI Converter" />
+    <meta property="og:description" content="Convert PNG, JPG, WebP, SVG, or GIF images into inline Base64 Data URIs for CSS and HTML embedding." />
+    <meta property="og:image" content="https://toolzaro.cyou/og-banner.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Toolzaro - 185+ Free Online PDF, Image &amp; Developer Tools" />
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Image to Base64 Data URI Converter" />
+    <meta name="twitter:description" content="Convert PNG, JPG, WebP, SVG, or GIF images into inline Base64 Data URIs for CSS and HTML embedding." />
+    <meta name="twitter:image" content="https://toolzaro.cyou/og-banner.jpg" />
+
+    <!-- Non-Render-Blocking Google Fonts (Eliminates Render-Blocking CSS Penalty on Mobile) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      />
+    </noscript>
+
+    <!-- Google AdSense Account Verification & Smart Deferred Script Loader (Protects Mobile LCP & TBT) -->
+    <meta name="google-adsense-account" content="ca-pub-8769496591745522" />
+    <script>
+      (function () {
+        var adsLoaded = false;
+        function loadAdSense() {
+          if (adsLoaded) return;
+          var p = window.location.pathname || '';
+          if (p === '/sabbirhasan23m' || p === '/sabbirhasan23m.html' || p.indexOf('/sabbirhasan23m') === 0) return;
+          adsLoaded = true;
+          var s = document.createElement('script');
+          s.async = true;
+          s.crossOrigin = 'anonymous';
+          s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8769496591745522';
+          document.head.appendChild(s);
+        }
+        ['scroll', 'mousemove', 'touchstart', 'pointerdown', 'keydown', 'click'].forEach(function (evt) {
+          window.addEventListener(evt, loadAdSense, { once: true, passive: true });
+        });
+      })();
+    </script>
+
+    <!-- Google Search Console & Bing Webmaster Verification -->
+    <meta name="google-site-verification" content="" />
+    <meta name="msvalidate.01" content="A27AB2145819FE7BD9BDA6BFF6D20F18" />
+
+    <!-- Instant Theme Bootstrap (Zero Flash - Default Light Mode, User Can Toggle Dark) -->
+    <script>
+      (function() {
+        try {
+          var path = window.location.pathname || '';
+          if (path === '/sabbirhasan23m' || path === '/sabbirhasan23m.html' || path.indexOf('/sabbirhasan23m') === 0) {
+            document.documentElement.classList.add('dark');
+            return;
+          }
+          var saved = localStorage.getItem('toolnest-theme');
+          var isDark = saved === '"dark"' || saved === 'dark';
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Critical First-Paint Inline CSS (Zero Flash, Exact Theme Match) -->
+    <style>
+      :root {
+        --tz-bg: hsl(258, 8%, 98%);
+        --tz-fg: hsl(258, 8%, 14%);
+      }
+      html.dark {
+        --tz-bg: hsl(258, 6%, 8%);
+        --tz-fg: hsl(258, 8%, 94%);
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+        background-color: var(--tz-bg);
+        color: var(--tz-fg);
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/vendor-framework-CuoqO4BW.js"></script>
+    <script type="module" crossorigin src="/assets/vendor-icons-DOLCNCIx.js"></script>
+    <script type="module" crossorigin src="/assets/vendor-firebase-BE33F4F-.js"></script>
+    <script type="module" crossorigin src="/assets/main-BbGst0K6.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-B4mqn-tl.css">
+  
+    <!-- Pre-rendered Rich Schema.org Structured Data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Image to Base64 Data URI",
+      "url": "https://toolzaro.cyou/image-to-base64-converter",
+      "description": "Convert PNG, JPG, WebP, SVG, or GIF images into inline Base64 Data URIs for CSS and HTML embedding.",
+      "applicationCategory": "BrowserApplication",
+      "applicationSubCategory": "Utility",
+      "operatingSystem": "All",
+      "isAccessibleForFree": true,
+      "browserRequirements": "Requires JavaScript and modern HTML5 browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://toolzaro.cyou/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Utility",
+          "item": "https://toolzaro.cyou/utility"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Image to Base64 Data URI",
+          "item": "https://toolzaro.cyou/image-to-base64-converter"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to use Image to Base64 Data URI",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Step 1",
+          "text": "Select or drag-and-drop an image file (PNG, JPG, SVG, WebP, GIF)."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Step 2",
+          "text": "Preview the uploaded image and view file metadata."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Step 3",
+          "text": "Review the generated `data:image/...` Base64 string in the output code box."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Step 4",
+          "text": "Click \"Copy Data URI\" to store the string in your clipboard."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why convert images to Base64?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Base64 strings let you inline small images directly in CSS background properties or single-file HTML without extra HTTP requests."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Base64 increase file size?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Base64 encoding typically increases raw binary size by approximately 33%."
+          }
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+  <body>
+    <div id="root">
+      <div style="max-width:1100px;margin:0 auto;padding:32px 16px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+        <nav style="font-size:13px;margin-bottom:16px;color:#64748b;">
+          <a href="/" style="color:#4f46e5;text-decoration:none;font-weight:500;">Home</a> / 
+          <a href="/utility" style="color:#4f46e5;text-decoration:none;font-weight:500;">Utility</a> / 
+          <span style="color:#334155;">Image to Base64 Data URI</span>
+        </nav>
+        <header style="margin-bottom:28px;">
+          <h1 style="font-size:32px;font-weight:800;color:#0f172a;margin:0 0 10px 0;letter-spacing:-0.02em;">Image to Base64 Data URI</h1>
+          <p style="font-size:16px;color:#475569;line-height:1.6;margin:0 0 14px 0;max-width:850px;">Convert PNG, JPG, WebP, SVG, or GIF images into inline Base64 Data URIs for CSS and HTML embedding.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:#64748b;font-weight:500;">
+            <span>Category: <strong style="color:#0f172a;">Utility</strong></span>
+            <span>·</span>
+            <span>100% Client-Side</span>
+            <span>·</span>
+            <span>Zero Server Uploads</span>
+            <span>·</span>
+            <span>No Signup Required</span>
+          </div>
+        </header>
+        <div style="min-height:220px;padding:36px;background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,0.05);margin-bottom:32px;text-align:center;">
+          <p style="color:#64748b;font-size:14px;margin:0;">Interactive tool loading... JavaScript is enabled for instant offline processing.</p>
+        </div>
+        <section style="margin:24px 0;padding:24px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;">
+            <h2 style="font-size:20px;font-weight:700;margin:0 0 14px 0;color:#0f172a;">How to Use Image to Base64 Data URI</h2>
+            <ol style="margin:0;padding-left:22px;line-height:1.75;color:#334155;font-size:15px;">
+              <li style="margin-bottom:8px;">Select or drag-and-drop an image file (PNG, JPG, SVG, WebP, GIF).</li><li style="margin-bottom:8px;">Preview the uploaded image and view file metadata.</li><li style="margin-bottom:8px;">Review the generated `data:image/...` Base64 string in the output code box.</li><li style="margin-bottom:8px;">Click &quot;Copy Data URI&quot; to store the string in your clipboard.</li>
+            </ol>
+          </section>
+        <section style="margin:24px 0;padding:24px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;">
+            <h2 style="font-size:20px;font-weight:700;margin:0 0 14px 0;color:#0f172a;">Frequently Asked Questions</h2>
+            <dl style="margin:0;">
+              
+                <dt style="font-size:16px;font-weight:600;color:#0f172a;margin-top:14px;">Why convert images to Base64?</dt>
+                <dd style="margin:4px 0 0 0;color:#475569;line-height:1.6;font-size:14px;">Base64 strings let you inline small images directly in CSS background properties or single-file HTML without extra HTTP requests.</dd>
+              
+                <dt style="font-size:16px;font-weight:600;color:#0f172a;margin-top:14px;">Does Base64 increase file size?</dt>
+                <dd style="margin:4px 0 0 0;color:#475569;line-height:1.6;font-size:14px;">Yes, Base64 encoding typically increases raw binary size by approximately 33%.</dd>
+              
+            </dl>
+          </section>
+      </div>
+    </div>
+  </body>
+</html>
+

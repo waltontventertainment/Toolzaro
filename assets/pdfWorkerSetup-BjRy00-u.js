@@ -1,0 +1,1 @@
+import{G as r,v as o}from"./vendor-pdf-D_y-B2DL.js";const t="/assets/pdfWorker-V_qNnzS8.js";let e=!1;function d(){if(!e&&"undefined"!=typeof window){try{if(t)return r.workerSrc=t,void(e=!0)}catch(d){}try{r.workerSrc=`https://unpkg.com/pdfjs-dist@${o||"6.4.299"}/build/pdf.worker.min.mjs`,e=!0}catch(n){}}}"undefined"!=typeof window&&d();export{d as i};
